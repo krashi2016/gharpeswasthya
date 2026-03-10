@@ -12,18 +12,6 @@ export default function Home() {
             </div>
             <div className="flex space-x-4">
               <Link
-                href="/register?type=patient"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                Register as Patient
-              </Link>
-              <Link
-                href="/register?type=provider"
-                className="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors"
-              >
-                Register as Provider
-              </Link>
-              <Link
                 href="/login"
                 className="bg-gray-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors"
               >
