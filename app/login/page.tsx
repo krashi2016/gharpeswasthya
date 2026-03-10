@@ -18,6 +18,7 @@ export default function LoginPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [userType, setUserType] = useState<'patient' | 'provider'>('patient');
 
   const {
     register,
@@ -69,6 +70,18 @@ export default function LoginPage() {
           </div>
 
           <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">I am a</label>
+            <select
+              value={userType}
+              onChange={(e) => setUserType(e.target.value as 'patient' | 'provider')}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="patient">Patient</option>
+              <option value="provider">Healthcare Provider</option>
+            </select>
+          </div>
+
+          <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <input
               {...register('password')}
@@ -103,6 +116,24 @@ export default function LoginPage() {
           >
             Forgot Username?
           </Link>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="text-gray-600 mb-2">New user?</p>
+          <div className="space-y-2">
+            <Link
+              href="/register?type=patient"
+              className="block w-full bg-green-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-green-700 transition-colors text-center"
+            >
+              Register as Patient
+            </Link>
+            <Link
+              href="/register?type=provider"
+              className="block w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors text-center"
+            >
+              Register as Provider
+            </Link>
+          </div>
         </div>
 
         <div className="mt-6 text-center">
