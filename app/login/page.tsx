@@ -90,6 +90,21 @@ export default function LoginPage() {
           </button>
         </form>
 
+        <div className="mt-4 text-center space-y-2">
+          <Link
+            href="/forgot-password"
+            className="text-blue-600 hover:text-blue-800 text-sm block"
+          >
+            Forgot Password?
+          </Link>
+          <Link
+            href="/forgot-username"
+            className="text-blue-600 hover:text-blue-800 text-sm block"
+          >
+            Forgot Username?
+          </Link>
+        </div>
+
         <div className="mt-6 text-center">
           <Link href="/" className="text-blue-600 hover:text-blue-800">
             Back to Home
